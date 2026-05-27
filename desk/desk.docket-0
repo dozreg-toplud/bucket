@@ -1,0 +1,10 @@
+:~
+  title+'Bucket'
+  info+''
+  color+0x4d.22ba
+  version+[0 0 1]
+  website+'https://urbit.org/'
+  license+'MIT'
+  image+''
+  site+/apps/bucket
+==
