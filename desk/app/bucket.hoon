@@ -46,7 +46,6 @@
     ::
     (write-file /mar/[extension]/hoon %hoon !>(src))
   ::
-  ;<  =dais:clay  bind:m  (build-mark:sio beak extension)
   =/  pax=path  /[?:(public 'public' 'private')]/[name]/[extension]
   ;<  =tube:clay  bind:m  (build-tube:sio beak %mime extension)
   (write-file pax extension (tube !>([*mite data])))
