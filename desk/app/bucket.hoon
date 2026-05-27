@@ -5,6 +5,7 @@
 =*  card  card:agent:gall
 =*  name-term  %bucket
 =*  name-mold  $bucket
+=*  data-desk  %bucket-data
 =/  strand  strand:rand
 =/  our-url    (rap 3 '/apps/' name-term '/' ~)
 |%
@@ -22,7 +23,7 @@
 ++  write-file
   |=  [=path =mark =vase]
   ^-  (strand-form-raw:rand ~)
-  =/  c  [%pass / %arvo [%c [%info name-term %& [path %ins mark vase]~]]]
+  =/  c  [%pass / %arvo [%c [%info data-desk %& [path %ins mark vase]~]]]
   (send-raw-card:sio c)
 ::
 ++  save-file
@@ -32,7 +33,7 @@
   =/  m  (strand ,~)
   ^-  form:m
   ;<  bol=bowl:rand  bind:m  get-bowl:sio
-  =/  beak  [our.bol name-term %da now.bol]
+  =/  beak  [our.bol data-desk %da now.bol]
   ;<  ~  bind:m
     ;<  have-mark=?  bind:m  (check-for-file:sio beak /mar/[extension]/hoon)
     ?:  have-mark  (pure:m ~)
@@ -51,14 +52,44 @@
     (write-file pax extension !>(data))
   ;<  =tube:clay  bind:m  (build-tube:sio beak %mime extension)
   (write-file pax extension (tube !>([*mite data])))
+::
+++  mage
+  |=  [our=@p now=@da]
+  |=  =path
+  :-  path
+  ^-  page:clay
+  :-  (rear path)
+  ~|  [%missing-source-file name-term path]
+  .^  *
+    %cx
+    (scot %p our)
+    name-term
+    (scot %da now)
+    path
+  ==
 --
 ::
 ^-  agent:gall
 |_  =bowl
 +*  this  .
 ++  on-init
+  =/  files=(map path page)
+    %-  malt
+    ^-  (list [path page])
+    =-  (turn - (mage our.bowl now.bowl))
+    ^-  (list path)
+    :~  /mar/noun/hoon
+        /mar/hoon/hoon
+        /mar/txt/hoon
+        /mar/kelvin/hoon
+        /sys/kelvin
+        /mar/mime/hoon
+        /lib/make-octets-mark/hoon
+    ==
+  ::
   :_  this
   :~
+    [%pass /clay/data-desk %arvo (new-desk:cloy data-desk ~ files)]
     [%pass /eyre/connect %arvo %e %connect `/apps/[name-term] name-term]
     [%pass /hood/public %agent [our.bowl %hood] %poke %kiln-permission !>([name-term /public &])]
   ==
