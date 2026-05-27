@@ -113,14 +113,13 @@
   ?+    method.request.inbound-request  (send [405 ~ [%stock ~]])
       ?(%'GET' %'POST')
     =/  site=(pole knot)  site.request-line
-    ?+    site  ~&  site  (send [404 ~ [%plain "404 - Not Found"]])
+    ?+    site  (send [404 ~ [%plain "404 - Not Found"]])
         ?([%apps name-mold ~] [%'~' name-mold ~])
       (send 302 ~ [%redirect our-url])
     ::
         [%apps name-mold %$ ~]
       ?.  authenticated.inbound-request
         (send [302 ~ [%login-redirect our-url]])
-      :: (send [200 ~ manx+form])
       %+  give-simple-payload:app:server  eyre-id
       :-  :-  200
           ['content-type'^'text/html']~
@@ -146,7 +145,6 @@
       (send [200 ~ plain+"OK"])
     ==
   ==
-
 ::
 ++  on-peek   _~
 ++  on-watch  _`this
