@@ -91,7 +91,7 @@
   :~
     [%pass /clay/data-desk %arvo (new-desk:cloy data-desk ~ files)]
     [%pass /eyre/connect %arvo %e %connect `/apps/[name-term] name-term]
-    [%pass /hood/public %agent [our.bowl %hood] %poke %kiln-permission !>([name-term /public &])]
+    [%pass /hood/public %agent [our.bowl %hood] %poke %kiln-permission !>([data-desk /public &])]
   ==
 ::
 ++  on-save  *vase
