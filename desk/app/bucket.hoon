@@ -48,8 +48,6 @@
   ::
   ;<  =dais:clay  bind:m  (build-mark:sio beak extension)
   =/  pax=path  /[?:(public 'public' 'private')]/[name]/[extension]
-  ?^  (mole |.((vale:dais data)))
-    (write-file pax extension !>(data))
   ;<  =tube:clay  bind:m  (build-tube:sio beak %mime extension)
   (write-file pax extension (tube !>([*mite data])))
 ::
@@ -91,7 +89,15 @@
   :~
     [%pass /clay/data-desk %arvo (new-desk:cloy data-desk ~ files)]
     [%pass /eyre/connect %arvo %e %connect `/apps/[name-term] name-term]
-    [%pass /hood/public %agent [our.bowl %hood] %poke %kiln-permission !>([data-desk /public &])]
+  ::
+    [ %pass
+      /hood/public
+      %agent
+      [our.bowl %hood]
+      %poke
+      %kiln-permission
+      !>([data-desk /public &])
+    ]
   ==
 ::
 ++  on-save  *vase
