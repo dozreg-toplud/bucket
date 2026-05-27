@@ -104,7 +104,7 @@
         %+  rash  name-ext
         ;~  pose
           ;~((glue dot) sym sym)
-          ;~(plug sym (easy %cold))
+          ;~(plug sym (easy %data))
         ==
       ::
       =/  public=?  =('1' (~(got by headers) 'x-public'))
